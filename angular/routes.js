@@ -1,10 +1,10 @@
 
-var myApp = angular.module("matchesApp",["ngRoute"]);
+//var myApp = angular.module("matchesApp",["ngRoute"]);
 
 
 myApp.config(["$routeProvider",function($routeProvider){
 	$routeProvider
-	.when("/",{
+	.when("/","main",{
 		templateUrl : "views/main-view.html",
 		controller : "MainController",
 		controllerAs : "mainCtrl"

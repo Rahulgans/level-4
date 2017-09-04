@@ -12,6 +12,7 @@ myApp.controller("MainController", ["$http",function($http){
 	this.name;
   this.year;
 	this.logo = "images/PL.jpg";
+  console.log(this.baseUrl1);
 	
     var main= this ;
 
