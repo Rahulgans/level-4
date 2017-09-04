@@ -4,11 +4,16 @@ var myApp = angular.module("matchesApp",["ngRoute"]);
 
 myApp.config(["$routeProvider",function($routeProvider){
 	$routeProvider
-	.when("/main-view",{
+	.when("/",{
 		templateUrl : "views/main-view.html",
 		controller : "MainController",
 		controllerAs : "mainCtrl"
 	})
+	/* .when("/main",{
+		templateUrl : "views/main-view.html",
+		controller : "MainController",
+		controllerAs : "mainCtrl"
+	}) */
 	.otherwise(
             {
                 //redirectTo:'/'

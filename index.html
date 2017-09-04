@@ -17,13 +17,13 @@
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
 <body ng-controller="MainController as mainCtrl">
-<!-- <nav class="navbar navbar-default">
+<nav class="navbar navbar-default">
 <div class="container-fluid">
 	<div class="navbar-header">
-      <a class="navbar-brand" href="#"><img ng-src = "{{ logo }}" class="img-responsive brand" ></a>
+      <a class="navbar-brand" href="#">Premier league</a>
     </div>
 		</div>
-		</nav> -->
+		</nav> 
 		<div class="container-fluid">
 			<div class="row">
 				<div class=" col-xs-12">
@@ -36,9 +36,15 @@
 			<div class="container-fluid">
 				<div class="row actions">
 					<div class="col-xs-6 text-center">
-					<a ng-href="#/main-view" class="btn btn-primary"> Let's Shoot </a>
+					<a ng-href="#/" class="btn btn-primary"> Let's Shoot </a>
 					<!-- Main Content -->
-    <div class="container">
+					</div>
+					<div class="col-xs-6 text-center">
+						<a target= "_blank" href="https://www.premierleague.com/" class="btn btn-primary"> Visit Site </a>
+					</div>
+					</div>
+			</div>
+			 <div class="container-fluid">
 
        <div ng-view>
            
@@ -47,14 +53,29 @@
 
     </div>
 
-    <hr>
-				
-					</div>
-					<div class="col-xs-6 text-center">
-						<a target= "_blank" href="https://www.premierleague.com/" class="btn btn-primary"> Visit Site </a>
-					</div>
-					</div>
-			</div>
+    <footer>
+    	
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    <ul class="list-inline text-center">
+                       
+                        <li>
+                            <a href="#/">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-trophy fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                        
+                    </ul>
+                    <p class="copyright text-muted">Copyright &copy; Premier League'17</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
 				
 	
  		  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>

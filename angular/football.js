@@ -19,7 +19,7 @@ myApp.controller("MainController", ["$http",function($http){
      this.matches2 = [];
      this.totalMatches = [];
      }
-])
+]);
   
 
  /*   this.loadMatches = function(){
