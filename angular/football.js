@@ -1,68 +1,87 @@
 
 
-var myApp = angular.module("matchesApp", []);
+var myApp = angular.module("matchesApp",["ngRoute"]);
 
-myApp.controller("MainController", ["$scope","$http",function($scope,$http){
+myApp.controller("MainController", ["$http",function($http){
 
 	
 
-	$scope.title = "Stats for EPL";
-	$scope.baseUrl1 = "https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json";
-	$scope.baseUrl2 = "https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json";
-	$scope.name="";
+	this.title = "Stats for EPL";
+	this.baseUrl1 = "https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json";
+	this.baseUrl2 = "https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json";
+	this.name;
+  this.year;
+	this.logo = "images/PL.jpg";
 	
-  $scope.loadMatches = function(){
-  	
- $scope.matches1 = [];	
-	$scope.totalMatches = [];
-  	 $scope.matches2= [];
-	
+    var main= this ;
 
-    $http({
+      this.matches1 = [];  
+     this.matches2 = [];
+     this.totalMatches = [];
+     }
+])
+  
+
+ /*   this.loadMatches = function(){
+
+
+      if (main.year == 2015){
+        
+      }
+    main.getFirst = function(){
+
+    	$http({
         method: 'GET',
-        url:$scope.baseUrl1
+        url:main.baseUrl1
       }).then(function successCallback(response) {
-          // $scope callback will be called asynchronously
+          // this callback will be called asynchronously
           // when the response is available
-         	$scope.matches1.push(response.data);
-         	// console.log($scope.matches1);
+         	main.matches1.push(response.data);
+         	main.getSecond();
+         	
+         	//   console.log(this.matches1);
          	
         }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
           alert("some error occurred. Check the console.");
 
-        });
+        })
+  };
 
+    this.getSecond = function(){
 
-
-      $http({
+     $http({
         method: 'GET',
-        url: $scope.baseUrl2
+        url: this.baseUrl2
       }).then(function successCallback(response) {
-          // $scope callback will be called asynchronously
+          // this callback will be called asynchronously
           // when the response is available
-          $scope.matches2.push(response.data);
-         
+          this.matches2.push(response.data);
+          this.matches1.push(this.matches2[0]);
+
+          this.getTotal();
 
         }, function errorCallback(response) {
           // called asynchronously if an error occurs
           // or server returns response with an error status.
           alert("some error occurred. Check the console.");
 
-        });
+        })
 
-     
-      $scope.matches1.push($scope.matches2);
-     console.log($scope.matches1);
-
-   //  $scope.matches1.push($scope.matches1,$scope.matches2);
+    } 
    
-   // console.log($scope.matches1);
+    this.getTotal = function(){
+		    
+		 this.totalMatches = this.matches1;
 
 
-  };
+    } 
+
+    this.getFirst() ; 
+
+
+  }; 
    
+*/
 
-
-}]);
