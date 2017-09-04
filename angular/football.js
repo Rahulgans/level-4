@@ -1,8 +1,8 @@
 
 
-var myApp = angular.module("matchesApp",["ngRoute"]);
+var myApp = angular.module('matchesApp',['ngRoute']);
 
-myApp.controller("MainController", ["$http",function($http){
+myApp.controller("mainController", ["$http",function($http){
 
 	
 

@@ -1,12 +1,11 @@
 
-var myApp = angular.module("matchesApp",["ngRoute"]);
-
+// var myApp = angular.module("matchesApp",["ngRoute"]);
 
 myApp.config(["$routeProvider",function($routeProvider){
 	$routeProvider
-	.when("/main-view",{
+	.when("/main",{
 		templateUrl : "views/main-view.html",
-		controller : "MainController",
+		controller : "mainController",
 		controllerAs : "mainCtrl"
 	})
 	.otherwise(

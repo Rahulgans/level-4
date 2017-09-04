@@ -18,62 +18,31 @@
 <!-- Latest compiled JavaScript -->
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 </head>
-<body ng-controller="MainController as mainCtrl">
+<body ng-controller="mainController as mainCtrl">
 <nav class="navbar navbar-default">
 <div class="container-fluid">
-	<div class="navbar-header">
-      <a class="navbar-brand" href="#">Premier league</a>
-    </div>
+      <div class="navbar-brand" href="#">Premier league</a>
+      </div>
+        <ul class="nav navbar-nav navbar-right ">
+                    <li><a ng-href="#/main"> Let's Shoot </a></li>
+                   <li><a target= "_blank" href="#">Home</a></li>
+            </ul>
+    
 		</div>
 		</nav> 
-		<div class="container-fluid">
-			<div class="row">
-				<div class=" col-xs-12">
-				<img ng-src = "{{ mainCtrl.logo }}" class="img-responsive img-circle brand" ><h1 class ="text-center">Welcome</h1>
+		<h1 class ="text-center">Welcome</h1>
 				<h2 class="text-center"> We present to you an overall review of England's top league</h2>
-				</div>
-			</div>
-		</div>
 			
 			<div class="container-fluid">
-				<div class="row actions">
-					<div class="col-xs-6 text-center">
-					<a ng-href="#/main" class="btn btn-primary"> Let's Shoot </a>
-					<!-- Main Content -->
-					</div>
-					<div class="col-xs-6 text-center">
-					   <a target= "_blank" href="https://www.premierleague.com/" class="btn btn-primary"> Visit Site </a>
-					</div>
-					</div>
-			</div>
-			 <div class="container-fluid">
-
-                <div ng-view></div> 
-
+             <div ng-view></div> 
             </div>
 
-    <footer>
-    	
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    <ul class="list-inline text-center">
-                       
-                        <li>
-                            <a href="#/">
-                                <span class="fa-stack fa-lg">
-                                    <i class="fa fa-circle fa-stack-2x"></i>
-                                    <i class="fa fa-trophy fa-stack-1x fa-inverse"></i>
-                                </span>
-                            </a>
-                        </li>
-                        
-                    </ul>
-                    <p class="copyright text-muted">Copyright &copy; Premier League'17</p>
-                </div>
-            </div>
-        </div>
-    </footer>
+            <hr>
+		<footer>
+            <h3 class="text-center text-muted"> &copy;Premier - league  </h3>
+        </footer>
+               
+    
 
 				
 	
