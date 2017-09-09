@@ -14,12 +14,97 @@ myApp.controller("MainController", ['$http',function($http){
 	this.logo = "images/PL.jpg";
 	
     var main= this ;
-
+    
+    this.nameFirst ;
+    this.nameSecond ;
       this.matches1 = [];  
      this.matches2 = [];
+    // this.teams =[];
+     this.dates =[];
      this.totalMatches = [];
-     }
-])
+     this.rounds1 = [];
+     this.rounds2 = [];
+    this.days = [];
+    
+     this.loadFirst = function(){
+ 
+      $http({
+        method: 'GET',
+        url:main.baseUrl1
+      }).then(function successCallback(response) {
+          // this callback will be called asynchronously
+          // when the response is available
+         main.rounds1 = response.data.rounds;
+           main.nameFirst = response.data.name;       
+                  console.log(main.rounds1);
+    
+         
+      
+        // console.log(main.dates.length); */
+
+        }, function errorCallback(response) {
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+          alert("some error occurred. Check the console.");
+
+        })
+
+    
+       //   console.log(main.dates);
+     
+      //console.log(main.matches1);
+  };
+
+ 
+  this.loadSecond = function(){
+
+      
+      $http({
+        method: 'GET',
+        url:main.baseUrl2
+      }).then(function successCallback(response) {
+          // this callback will be called asynchronously
+          // when the response is available
+       main.nameSecond = response.data.name;
+          main.rounds2 = response.data.rounds;
+
+
+          
+          
+          
+        }, function errorCallback(response) {
+          // called asynchronously if an error occurs
+          // or server returns response with an error status.
+          alert("some error occurred. Check the console.");
+
+        })
+     
+      //console.log(main.matches1);
+  };
+
+     } // controller function ends
+
+])  // controller ends
+
+
+
+
+//  ROUTE Configuration 
+
+myApp.config(["$routeProvider",function($routeProvider){
+  $routeProvider
+  .when("/main",{
+    templateUrl : "views/main-view.html",
+    controller : "MainController",
+    controllerAs : "mainCtrl"
+  })
+  .otherwise(
+            {
+                redirectTo:'/'
+                
+            }
+        );
+}]);
   
 
  /*   this.loadMatches = function(){

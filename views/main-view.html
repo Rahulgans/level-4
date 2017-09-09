@@ -5,17 +5,85 @@
 							<div class="col-xs-12">
 							<img ng-src = "{{ mainCtrl.logo }}" class="img-responsive img-circle brand" >
 						</div>
-							<div class="col-xs-4">
-								<div class="dropdown">
-				<button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"> Season-Stats
-				<span class= "caret"></span>
-				</button>
-				
-				<ul class="dropdown-menu dropdown-menu-left" role= "menu">
-					<li><a href="#"> 2015/16</a></li>
-					<li><a href="#"> 2016/17</a></li>
-					</ul>
+							<div class="col-xs-12 actions">
+								 <form class="form-group">
+								 	<div class="col-xs-6 col-sm-4 col-md-4">
+								 	<label for="filter-season"> Select Season </label>
+									 <select class="form-control" id="filter-season" ng-model="check">
+									 	<option selected disabled hidden text-muted>Select Season</option>
+									    <option value="1st" ng-click = "mainCtrl.loadFirst()">2015/16</option>
+									    <option value="2nd" ng-click = "mainCtrl.loadSecond()">2016/17</option>
+									 </select>
+ 								</div>
+ 								<div class="col-xs-6 col-sm-4 col-md-4">
+ 									<label for="filter-season" > Enter Team </label>
+ 									<input type="text" name="team" class="form-control" placeholder="Enter team name" ng-model="getTeams">
+ 									</div>
+ 									<div class="col-xs-6 col-sm-4 col-md-4">
+ 									<label for="filter-season" > Enter Date </label>
+ 									<input type="text" name="team" class="form-control" placeholder="Enter match date" ng-model="getDate">
+ 									<span class="help-block">Enter date format as <strong>YYYY-mm-dd</strong></span>
+ 									</div>
+ 							</form>
+ 							
 					</div>
-				</div>
-			</div>
+					</div>
+
+							<div class="actions1"> 
+							<table ng-show="check =='1st'" class="table table-responsive table-condensed table-bordered">
+								<caption class="text-center">
+								<h3><span><i class=" fa fa-trophy fa-3x text-danger"></i>{{ mainCtrl.nameFirst }}<i class="fa fa-trophy fa-3x text-danger"></i> </span></h3></caption>
+									<thead>
+									<tr>
+							        <th>Day</th>
+							        <th>Date</th>
+							        <th>Fixtures</th>
+							        <th>Results</th>
+							     </tr>
+
+						     </thead>
+						 <tbody ng-repeat ="items in mainCtrl.rounds1 | filter: getDate" class="for-bgimage">
+
+						 <tr ng-repeat ="item in items.matches | filter: getTeams">
+						  	
+						  		<td>{{ items.name }}</td>
+						  		<td>{{ item.date  }}</td>
+						  		<td>{{ item.team1.key | uppercase  }} <br>  <span class="text-info">vs</span> <br>{{ item.team2.key | uppercase }}</td>
+						  		<td><span><i class="fa fa-futbol-o fa-2x text-info"></i></span>
+						  		<p style = "margin: 5px 0px;"><a ng-href="#/match-stats" class="btn btn-default btn-xs round">Dive in &raquo;</a></p></td>
+			
+						  	</tr>
+					  	</tbody>
+
+					</table>
+					</div>
+
+							<div class="actions1"> 
+							<table ng-show="check =='2nd'" class="table table-responsive table-condensed table-bordered">
+							<caption class="text-center"><h3><span><i class=" fa fa-trophy fa-3x text-danger"></i>{{ mainCtrl.nameSecond }}<i class=" fa fa-trophy fa-3x text-danger"></i> </span></h3></caption>
+								<thead>
+								<tr>
+						        <th>Day</th>
+						        <th>Date</th>
+						        <th>Fixtures</th>
+						        <th>Results</th>
+						     </tr>
+
+						     </thead>
+						 <tbody ng-repeat ="items in mainCtrl.rounds2 | filter: getDate" class="for-bgimage">
+
+						 <tr ng-repeat ="item in items.matches | filter: getTeams">
+						  	
+						  		<td>{{ items.name }}</td>
+						  		<td>{{ item.date | date: mediumDate }}</td>
+						  		<td>{{ item.team1.key | uppercase  }} <br>  <span class="text-info">vs</span> <br>{{ item.team2.key | uppercase }}</td>
+						  		<td><span><i class="fa fa-futbol-o fa-2x text-info"></i></span>
+						  		<p style = "margin: 5px 0px;"><a ng-href="#/match-stast" class="btn btn-default btn-xs round">Dive in &raquo;</a></p></td>
+			
+						  	</tr>
+					  	</tbody>
+
+					</table>
+					</div>
+				
 				

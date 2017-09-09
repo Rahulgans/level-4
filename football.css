@@ -1,5 +1,6 @@
 body{
 	padding-top: 20px;
+	font-family: 'Titillium Web', sans-serif;
 }
 
 
@@ -10,6 +11,65 @@ body{
     padding: 10px;
    margin: 0px auto;
 }
-.actions {
-	margin-top: 30px;
+
+
+.actions{
+		margin-top: 30px;
 }
+
+.actions1 {
+		margin-top: 30px;
+}
+
+
+.table td {
+	text-align: center;
+	/* background-color: lightseagreen; */
+/*	color: #0d0d0d;  */
+	color:ghostwhite;
+	 vertical-align: middle !important;
+	font-weight: bolder;
+}
+
+	thead{
+	background-color: #090909;
+		opacity: 0.9;
+		color: bisque;
+}
+
+th{
+	height: 50px;
+	text-align: center;
+}
+
+.text-info {
+	color: #131513;
+}
+
+
+.for-bgimage{
+	background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.2)),url("images/images4.jpg");
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	
+
+}
+
+.round{
+
+	border-radius: 10px;
+	background-color: #7bed5f;
+	
+}
+
+
+@media screen and (max-width: 480px){
+	.table {
+		font-size: 12px;
+	}
+}
+/*
+.images {
+	margin: 0px auto;
+}
+*/

@@ -1,5 +1,6 @@
 
-// var myApp = angular.module("matchesApp",["ngRoute"]);
+
+ var myApp = angular.module("matchesApp",["ngRoute"]);
 
 myApp.config(["$routeProvider",function($routeProvider){
 	$routeProvider
