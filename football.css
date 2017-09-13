@@ -43,7 +43,7 @@ th{
 }
 
 .text-info {
-	color: #131513;
+	color: #0c0c0c;
 }
 
 
@@ -63,10 +63,51 @@ th{
 }
 
 
-@media screen and (max-width: 480px){
-	.table {
+@media screen and (max-width: 768px){
+
+	.trophy {
+		font-size: 14px;
+	}
+
+	.table td {
+		font-size: 12px;
+		font-weight: 300;
+}
+
+	.forMatch{
 		font-size: 12px;
 	}
+}
+
+@media screen and (max-width: 480px){
+
+	.forMatch{
+		font-size: 10px;
+	}
+}
+/* .helloo {
+	background-image: url("images/images4.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+
+} */
+
+.logo-team{
+	width: 150px; 
+	height: 150px;
+	margin: 5px auto;
+}
+
+.actionsMatch{
+
+	display: flex;
+	align-items: center;
+	margin-bottom: 10px;
+}
+
+.match-center{
+	border: 1px solid black;
+	box-shadow: 5px 10px 10px #363639;
 }
 /*
 .images {

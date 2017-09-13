@@ -1,0 +1,33 @@
+
+
+			<div class="row actionsMatch helloo">
+				<div class="col-xs-4 col-md-4">
+				
+						<img ng-src = "images/{{ matchCtrl.code1 | lowercase }}.png" class="img-responsive logo-team">
+						<h3 class="text-center" style="margin-top: 10px;"><strong>{{ matchCtrl.team1 }}</strong></h3>
+						<h3 class="text-center" style="margin-top: 10px;"> Goals : {{ matchCtrl.score1 }}</h3>
+					</div>
+						
+					<div class="col-xs-4 col-md-4 match-center">
+						<h3 class="text-center forMatch"> {{ matchCtrl.day }}</h3>
+						<hr>
+						<h3 class="text-center forMatch"> {{ matchCtrl.date }}</h3>
+					</div>
+					<div class="col-xs-4 col-md-4">
+					
+						<img ng-src = "images/{{ matchCtrl.code2 | lowercase }}.png" class="img-responsive logo-team">
+						<h3 class="text-center" style="margin-top: 10px;"><strong>{{ matchCtrl.team2 }}</strong></h3>
+
+						<h3 class="text-center" style="margin-top: 10px;">Goals : {{ matchCtrl.score2 }}</h3>
+						
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-xs-12">
+						<h2 class="text-center"> <strong>{{ matchCtrl.winner }}</strong> </h2>
+					</div>
+					<div class="col-xs-12 text-center">
+						<button type="button" class="btn btn-info btn-sm" ng-click="matchCtrl.navigateBack()">Back to table</button>
+					</div>
+				</div>
