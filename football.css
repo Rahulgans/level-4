@@ -1,5 +1,5 @@
 body{
-	padding-top: 20px;
+	padding-top: 40px;
 	font-family: 'Titillium Web', sans-serif;
 }
 
@@ -21,6 +21,11 @@ body{
 		margin-top: 30px;
 }
 
+.table > thead > tr > th {
+    vertical-align: middle;
+    height: 50px;
+	text-align: center;
+}
 
 .table td {
 	text-align: center;
@@ -37,13 +42,8 @@ body{
 		color: bisque;
 }
 
-th{
-	height: 50px;
-	text-align: center;
-}
-
 .text-info {
-	color: #0c0c0c;
+	color: #060317;
 }
 
 
@@ -62,36 +62,6 @@ th{
 	
 }
 
-
-@media screen and (max-width: 768px){
-
-	.trophy {
-		font-size: 14px;
-	}
-
-	.table td {
-		font-size: 12px;
-		font-weight: 300;
-}
-
-	.forMatch{
-		font-size: 12px;
-	}
-}
-
-@media screen and (max-width: 480px){
-
-	.forMatch{
-		font-size: 10px;
-	}
-}
-/* .helloo {
-	background-image: url("images/images4.jpg");
-	background-repeat: no-repeat;
-	background-size: cover;
-
-} */
-
 .logo-team{
 	width: 150px; 
 	height: 150px;
@@ -102,15 +72,64 @@ th{
 
 	display: flex;
 	align-items: center;
+	margin-top: 20px;
 	margin-bottom: 10px;
 }
 
-.match-center{
-	border: 1px solid black;
-	box-shadow: 5px 10px 10px #363639;
+.matchLeft{
+	box-shadow: 4px 5px 10px lightgrey;
+	margin-left: 20px;
 }
-/*
-.images {
-	margin: 0px auto;
+
+.matchRight{
+	box-shadow: 4px 5px 10px lightgrey;
+	margin-right: 20px;
 }
-*/
+
+
+@media screen and (max-width: 768px){
+
+	.trophy {
+		font-size: 14px;
+	}
+
+	.table td {
+		font-size: 10px;
+		font-weight: 300;
+}
+
+	.forMatch{
+		font-size: 12px;
+	}
+}
+
+@media screen and (max-width: 480px){
+
+
+	.intro-text{
+
+		font-size: 12px;
+		margin-top: 5px;
+	}
+	.forMatch{
+		font-size: 10px;
+	}
+	.logo-team {
+    width: 100px;
+    height: 100px;
+	}
+
+	.teamHeading {
+		font-size: 12px;
+	}
+
+	.matchLeft{
+	
+	margin-left: 10px;
+}
+
+.matchRight{
+	
+	margin-right: 10px;
+}
+}

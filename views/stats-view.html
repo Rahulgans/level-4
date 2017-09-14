@@ -1,0 +1,22 @@
+			
+	
+	<form>
+		<div class="form-group row">
+			<div class="col-xs-4 col-xs-offset-4 text-center">
+			<input type ="text" name = "team" class="form-control" id="team-input" ng-model ="teamName" placeholder= "Enter team here" data-toggle="tooltip" data-placement="right" title="First letter CAPS">		
+			<button type = "button" class="btn btn-info btn-xs" style="margin-top: 20px;" ng-click="statsCtrl.statsCheck1(teamName)">2015/16</button>
+			<button type = "button" class="btn btn-info btn-xs" style="margin-top: 20px;" ng-click="statsCtrl.statsCheck2(teamName)">2016/17</button>
+		</div>
+		</div>
+			
+		</div>
+	</form>
+
+		<div class="row">
+		<div class="col-xs-6 col-xs-offset-3">
+			<div><img ng-src = "images/{{ statsCtrl.code1 | lowercase }}"</div>
+			<ul class="list-unstyled">
+				<li> No of matches : {{ statsCtrl.matches }} </li>
+				</ul>
+				</div>
+				</div>

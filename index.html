@@ -1,73 +1,79 @@
 <!DOCTYPE html>
-<html lang="en" ng-app ="matchesApp">
+<html lang="en" ng-app="matchesApp">
+  <head>
+  <title> Premier League</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"> 
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+                  
+                      <!-- FONT AWESOME -->
+          <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
 
-<head>
+                     <!-- CUSTOM CSS -->
+           <link rel ="stylesheet" href= "football.css">
+         
+   </head>
+         <body ng-controller="MainController as mainCtrl">
+             
+             <nav class="navbar navbar-inverse navbar-fixed-top">
+             <div class="container">
+             <div class="navbar-header">
+              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+               <a class="navbar-brand" href="#">Premier league</a>
+              </div>
+              <div class="collapse navbar-collapse" id="navbar">
+                <ul class="nav navbar-nav navbar-right ">
+                     <li><a ng-href="#/main">Let's Shoot</a></li>
+                      <li><a href="#/teams">Team-Statistics</a></li>
+                </ul>
+              </div>
+            	</div>
+          </nav> 
+              		<h1 class ="text-center intro-text">Welcome</h1>
+                  
+              		<h2 class="text-center intro-text"> We present to you the overall stats of England's top league</h2>
+              			
+              			<div class="container-fluid">
+                    <div ng-view></div> 
+                 </div>
 
-<title> Premier League</title>
-
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Titillium+Web" rel="stylesheet"> 
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-
-                <!-- FONT AWESOME -->
-                
-    <link href="font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
-
-               <!-- CUSTOM CSS -->
-    
-    <link rel ="stylesheet" href= "football.css">
-   <!-- <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css"> -->
-
-          <!-- jQuery library -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-
-<!-- Latest compiled JavaScript -->
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-</head>
-<body ng-controller="MainController as mainCtrl">
-<nav class="navbar navbar-inverse">
-<div class="container-fluid">
-      <div class="navbar-brand" href="#">Premier league</a>
-      </div>
-        <ul class="nav navbar-nav navbar-right ">
-                    <li><a ng-href="#/main"> Let's Shoot </a></li>
-                   <li><a href="#">Home</a></li>
-            </ul>
-    
-		</div>
-		</nav> 
-		<h1 class ="text-center">Welcome</h1>
-    
-				<h2 class="text-center"> We present to you the overall stats of England's top league</h2>
-			
-			<div class="container-fluid">
-             <div ng-view></div> 
-            </div>
-
-            <hr>
-		<footer>
-            <h3 class="text-center text-muted"> &copy;Premier - league  </h3>
-        </footer>
-               
-    
-
-				
-	
- 		  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
- 		 
-          <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
- 		     
-           <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.4/lodash.min.js"></script> 
-
-            <script type="text/javascript" src="angular/premier.js"></script>
-             <!-- <script type="text/javascript" src="angular/routes.js"></script> -->
+                     <hr>
+              		<footer>
+                     <h3 class="text-center text-muted"> &copy;Premier - league  </h3>
+               </footer>
+                             
 
 
- 		
+                          <!-- jQuery library -->
+                        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
- 		  
- 		 
-</body>
-</html>
+                         <!-- Latest compiled JavaScript -->
+                        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+                                
+                       <!-- Tooltip Jquery Initialization -->
+              				<script>
+                      $(document).ready(function(){
+                          $('[data-toggle="tooltip"]').tooltip();   
+                      });
+                      </script>
+
+                        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+                        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
+                      <!--  <script type="text/javascript" src="angular/app.js"></script>
+
+                       
+                        <script type="text/javascript" src="angular/controllers/Main-controller.js"></script>
+                        <script type="text/javascript" src="angular/controllers/Match-controller.js"></script>
+                        <script type="text/javascript" src="angular/controllers/statistics-controller.js"></script> -->
+                         <script type="text/javascript" src="angular/premier.js"></script>
+                        <script type="text/javascript" src="angular/routes.js"></script>
+                           
+                   </body>
+             </html>
