@@ -6,11 +6,11 @@ body{
 
 		/***  FADE IN & FADE OUT ANIMATIONS ***/ 
 .page {
-  transition: 0.1s ease-out all;
+  transition: 0.3s ease-out all;
 }
 
 .page.ng-enter {
-  opacity: 0.5;
+  opacity: 0;
 }
 
 .page.ng-enter.ng-enter-active {
@@ -18,19 +18,13 @@ body{
 }
 
 .page.ng-leave {
-  opacity: 0.5;
+  opacity: 1;
 }
 
 .page.ng-leave.ng-leave-active {
   opacity: 0;
 }						/** animations end **/
-
-.container-fluid{
-	padding-left: 15px;
-	padding-right: 15px
-	}			
-
-
+			
 
 .intro-image{
 	background-image: linear-gradient(rgba(255,255,255,0.3),rgba(11, 11, 11, 0.6)),url("images/trophy.jpg");
@@ -69,7 +63,7 @@ body{
 	color: ghostwhite;
 	 vertical-align: middle !important;
 	font-weight: 00;
-	font-size: 1em;
+	font-size: 2em;
 }
 
 	#main-head{
@@ -140,6 +134,7 @@ body{
 
 #stats-head th{
 	border: 0px !important ;
+	font-size: 2em;
 
 }
 
@@ -224,6 +219,12 @@ body{
 		display: none;
 		}
 
+		.table td {
+
+		font-size: 0.8em;
+
+	}
+
 	
 	.teamHeading{
 		font-size: 12px;
@@ -242,7 +243,7 @@ body{
 
 	#stats-head th{
 
-	font-size: 12px;
+	font-size: 0.9em;
 }
 }
 
