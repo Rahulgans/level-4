@@ -1,22 +1,65 @@
 			
 	
 	<form>
-		<div class="form-group row">
+		<div class="form-group row" style="margin-top:20px;">
 			<div class="col-xs-4 col-xs-offset-4 text-center">
-			<input type ="text" name = "team" class="form-control" id="team-input" ng-model ="teamName" placeholder= "Enter team here" data-toggle="tooltip" data-placement="right" title="First letter CAPS">		
-			<button type = "button" class="btn btn-info btn-xs" style="margin-top: 20px;" ng-click="statsCtrl.statsCheck1(teamName)">2015/16</button>
-			<button type = "button" class="btn btn-info btn-xs" style="margin-top: 20px;" ng-click="statsCtrl.statsCheck2(teamName)">2016/17</button>
+			<input required type ="text" name = "team" class="form-control" id="team-input" ng-model ="teamName" placeholder= "Enter team here" title="First letter in CAPS">		
+			<button type = "button" class="btn btn-info btn-sm" style="margin-top: 20px;" ng-click="statsCtrl.statsCheck1(teamName)">2015/16</button>
+			<button type = "button" class="btn btn-info btn-sm" style="margin-top: 20px;" ng-click="statsCtrl.statsCheck2(teamName)">2016/17</button>
 		</div>
 		</div>
 			
 		</div>
 	</form>
 
-		<div class="row">
-		<div class="col-xs-6 col-xs-offset-3">
-			<div><img ng-src = "images/{{ statsCtrl.code1 | lowercase }}"</div>
-			<ul class="list-unstyled">
-				<li> No of matches : {{ statsCtrl.matches }} </li>
-				</ul>
-				</div>
+		<div class="row stats-bg">
+		<div class="col-xs-4 col-xs-offset-4" ng-if="statsCtrl.value1 || statsCtrl.value2">
+			<img ng-src = "images/{{ statsCtrl.code1 | lowercase }}.png" alt="Team didn't play" class="logo-team img-responsive">
+			</div>
+
+		<div>
+		       
+		           <table class="table table-responsive" >
+
+		                <thead id="stats-head">
+		                <tr>
+		                  <th>Season</th>
+		                   <th>Matches Played</th>
+		                   <th>Wins</th>
+		                   <th>Loss</th>
+		                   <th>Drawn</th>
+		                   <th>Goals Scored</th>
+		                   <th>Goals Against</th>
+		                   <th>Win %</th>
+		                 </tr>
+		                 </thead>
+		                 
+		               <tbody ng-if="statsCtrl.value1">
+		                <tr>
+		                 <td>{{ statsCtrl.totalMatches1.year }}</td>
+				         <td>{{ statsCtrl.totalMatches1.matches }}</td>
+		                  <td>{{ statsCtrl.totalMatches1.wins }}</td>
+		                  <td>{{ statsCtrl.totalMatches1.loss }}</td>
+		                  <td>{{ statsCtrl.totalMatches1.drawn }}</td>
+		                  <td>{{ statsCtrl.totalMatches1.goalsFor }}</td>
+		                  <td>{{ statsCtrl.totalMatches1.goalsAgainst }}</td>
+		                  <td>{{ statsCtrl.totalMatches1.winPercent }}</td>
+		                </tr>
+		                </tbody>
+		                <tbody ng-if="statsCtrl.value2">
+		                <tr>
+		                  <td>{{ statsCtrl.totalMatches2.year }}</td>
+				          <td>{{ statsCtrl.totalMatches2.matches }}</td>
+		                  <td>{{ statsCtrl.totalMatches2.wins }}</td>
+		                  <td>{{ statsCtrl.totalMatches2.loss }}</td>
+		                  <td>{{ statsCtrl.totalMatches2.drawn }}</td>
+		                  <td>{{ statsCtrl.totalMatches2.goalsFor }}</td>
+		                  <td>{{ statsCtrl.totalMatches2.goalsAgainst }}</td>
+		                  <td>{{ statsCtrl.totalMatches2.winPercent }}</td>
+		                </tr>      
+		              </tbody>
+		            </table>
+		          </div>
+
+				
 				</div>
