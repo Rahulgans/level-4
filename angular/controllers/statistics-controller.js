@@ -1,20 +1,21 @@
-
-// var myApp = angular.module('matchesApp',['ngRoute']);
-
-
 myApp.controller("StatsController",["$http",function($http){
 
       var main = this;
 
+
       this.baseUrl1 = "https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json";
       this.baseUrl2 = "https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json";
+
+
 
       this.rounds1 = [];
       this.totalMatches1 ={};
       this.totalMatches2={}; 
       this.code1;
+      this.value1 = false;
+      this.value2 = false ;
 
-          this.someFunc = function(response,data1){ 
+          this.teamStats = function(response,data1){ 
            
            main.rounds1 = response.data.rounds; 
 
@@ -88,59 +89,134 @@ myApp.controller("StatsController",["$http",function($http){
                        
                      //  console.log("working");
 
-                  main.totalMatches1.matcheS = matches;
+                  main.totalMatches1.year="2015/16" ;
+                  main.totalMatches1.matches = matches;
                   main.totalMatches1.goalsFor = goalsFor;
                   main.totalMatches1.goalsAgainst = goalsAgainst;
                   main.totalMatches1.loss = loss;
                   main.totalMatches1.wins = wins;
                   main.totalMatches1.drawn = drawn;
+                  main.totalMatches1.winPercent = ((wins/matches)*100).toFixed(2);
+                  main.totalMatches1.lossPercent = ((loss/matches)*100).toFixed(2);
 
                       }
 
                     else if(response.data.name =="English Premier League 2016/17"){
 
+                  main.totalMatches2.year = "2016/17";
                   main.totalMatches2.matches = matches;
                   main.totalMatches2.goalsFor = goalsFor;
                   main.totalMatches2.goalsAgainst = goalsAgainst;
                   main.totalMatches2.loss = loss;
                   main.totalMatches2.wins = wins;
                   main.totalMatches2.drawn = drawn;
+                  main.totalMatches2.winPercent = ((wins/matches)*100).toFixed(2);
+                  main.totalMatches2.lossPercent = ((loss/matches)*100).toFixed(2);
 
                 }
 
-               console.log(main.totalMatches2);
-        };
+          };
 
 
            this.statsCheck1 = function(data1){ 
 
+              if (data1 == null){
+                  alert ("Enter team name!"); 
+                }
+                else {
+
+              if(main.value2){
+                main.value2 = false;
+                main.value1 = true;
+              }
+
+              else{
+                main.value1 = true;
+              } 
 
               $http({
                     method:"GET",
                     url: main.baseUrl1
               }).then(function successCallback(response){
-                  
-               console.log(data1);
-                main.someFunc(response,data1);
+
+                this.names1=[];
+
+               for(var i=0; i<response.data.rounds[0].matches.length;i++){
+             //   console.log(response.data.rounds[0].matches.length);
+         
+                  this.names1.push(response.data.rounds[0].matches[i].team1.name);
+
+                    }
+                  //  console.log(this.names1);
+
+                for(var i=0;i<response.data.rounds[0].matches.length;i++){
+         
+                  this.names1.push(response.data.rounds[0].matches[i].team2.name);
+
+                    }
+
+                 if(this.names1.includes(data1)){
+
+                   main.teamStats(response,data1);
+                   }
+
+                   else{
+                    alert("Team didn't play in 2015 !");
+                   }
+                
               }, function errorCallback(reason){   
                 alert("Error in GET");
-                  })
-                };            
+                  })           
 
+              }
+               }; 
 
             this.statsCheck2 = function(data1){ 
 
+                if (data1 == null){
+                  alert ("Enter team name!"); 
+                }
+                else {
+
+                   if(main.value1 == true){
+                          main.value1 = false ;
+                           main.value2 = true;
+                       }
+                      else {
+                main.value2 = true;
+              }
 
               $http({
                     method:"GET",
                     url: main.baseUrl2
               }).then(function successCallback(response){
-                  
-                console.log(data1);
-                main.someFunc(response,data1);
+             
+              this.names2=[];
+
+               for(var i=0;i<response.data.rounds[0].matches.length;i++){
+         
+                  this.names2.push(response.data.rounds[0].matches[i].team1.name);
+
+                    }
+                for(var i=0;i<response.data.rounds[0].matches.length;i++){
+         
+                  this.names2.push(response.data.rounds[0].matches[i].team2.name);
+
+                    }
+
+                if(this.names2.includes(data1)){
+
+                   main.teamStats(response,data1);
+                   }
+
+                   else{
+                    alert("Team didn't play in 2016 !");
+                   }
+
               }, function errorCallback(reason){   
                 alert("Error in GET");
-                  })
-                } ;                               
+                  })         
+                }   
+                 } ;                          
 
         }]) // controller ends

@@ -38,11 +38,16 @@
           </nav> 
               			
               			<div class="container-fluid">
+                    <div class="row">
+                      <div class="col-xs-12 intro-image">
+                        <div id="intro-text"><h2 class="text-center"><strong>English Premier League</strong></h2></div>
+                        </div>
+                      </div>
                     <div class="page" ng-view></div> 
                  </div>
 
                      <hr>
-              		<footer style="background-color: darkgray;">
+              		<footer style="background-color: darkgray;padding: 50px;">
                      <h3 class="text-center text-muted"> &copy;Premier - league  </h3>
                </footer>
                              
@@ -53,19 +58,21 @@
 
                          <!-- Latest compiled JavaScript -->
                         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-                                
-                       <!-- Tooltip Jquery Initialization -->
               			
                         <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
                         <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-route.min.js"></script>
                         <script src = "https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.8/angular-animate.min.js"></script>
-                        <script type="text/javascript" src="angular/premier.js"></script>
+                         <script type="text/javascript" src="angular/app.js"></script>
 
-                        <!-- <script type="text/javascript" src="angular/app.js"></script>
+                                              <!-- CONTROLLERS   -->
                         <script type="text/javascript" src="angular/controllers/Main-controller.js"></script>
                         <script type="text/javascript" src="angular/controllers/Match-controller.js"></script>
                         <script type="text/javascript" src="angular/controllers/statistics-controller.js"></script> 
-                         <script type="text/javascript" src="angular/routes.js"></script> -->
+                                              <!-- ROUTE FILE -->
+
+                         <script type="text/javascript" src="angular/routes.js"></script> 
+                        
+
                            
                    </body>
              </html>

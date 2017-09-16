@@ -1,23 +1,16 @@
 body{
-	padding-top: 100px;
+	padding-top: 70px;
 	font-family: 'Titillium Web', sans-serif;
 }
 
 
-.brand{
-	width: 200px;
-    height: 200px;
-     border: 1px solid black;
-    padding: 10px;
-   margin: 0px auto;
-}
 		/***  FADE IN & FADE OUT ANIMATIONS ***/ 
 .page {
-  transition: 0.3s ease-in all;
+  transition: 0.1s ease-out all;
 }
 
 .page.ng-enter {
-  opacity: 0;
+  opacity: 0.5;
 }
 
 .page.ng-enter.ng-enter-active {
@@ -25,13 +18,32 @@ body{
 }
 
 .page.ng-leave {
-  opacity: 0.8;
+  opacity: 0.5;
 }
 
 .page.ng-leave.ng-leave-active {
   opacity: 0;
-}				/** animations end **/
+}						/** animations end **/
 
+.container-fluid{
+	padding-left: 15px;
+	padding-right: 15px
+	}			
+
+
+
+.intro-image{
+	background-image: linear-gradient(rgba(255,255,255,0.3),rgba(11, 11, 11, 0.6)),url("images/trophy.jpg");
+	background-repeat: no-repeat;
+	background-size: cover;
+	min-height: 250px;
+	}
+
+	#intro-text{
+
+		margin: 10%;
+		color: floralwhite;
+	}
 
 .actions{
 		margin-top: 30px;
@@ -45,15 +57,19 @@ body{
     vertical-align: middle;
     height: 50px;
 	text-align: center;
+	font-size: 12px;
 }
+
+.trophy {
+			font-size: 1em;
+		}	
 
 .table td {
 	text-align: center;
-	/* background-color: lightseagreen; */
-/*	color: #0d0d0d;  */
-	color:ghostwhite;
+	color: ghostwhite;
 	 vertical-align: middle !important;
-	font-weight: bolder;
+	font-weight: 00;
+	font-size: 1em;
 }
 
 	#main-head{
@@ -62,13 +78,12 @@ body{
 		color: bisque;
 }
 
-.text-info {
-	color: #060317;
-}
+
+	 /*linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)), */
 
 
 .for-bgimage{
-	background-image: linear-gradient(rgba(255,255,255,0.3),rgba(255,255,255,0.3)),url("images/black.jpg");
+	background-image: url("images/black.jpg");
 	background-repeat: no-repeat;
 	background-size: 100% 100%;
 	
@@ -77,7 +92,6 @@ body{
 
 .round{
 
-	border-radius: 10px;
 	background-color: #7bed5f;
 	
 }
@@ -126,20 +140,38 @@ body{
 
 #stats-head th{
 	border: 0px !important ;
+
 }
 
 	@media screen and (max-width: 480px){
 
-		.intro-text{
-			font-size: 12px;
-			margin-top: 5px;
+
+		.container-fluid{
+		
+		padding-left: 10px;
+		padding-right: 10px;
+		
+		}		
+
+		.intro-image{
+		min-height: 250px;
+		}
+
+		.trophy {
+			font-size: 14px;
 		}
 
 		.table td {
-			font-size: 10px;
-			font-weight: 300;
+
+		font-weight: 300;
+		font-size: 0.7em;
+
+	}
+
+
+		.colHidden{
+			display: none;
 		}
-		
 		.match-center h4 {
 			font-size: 12px;
 		}
@@ -172,25 +204,33 @@ body{
 			font-size: 10px;
 		}
 
+		.stats-bg{
+					
+		font-weight:300;
+		
+		}
+
 		#stats-head th{
 		
-		font-size: 10px;
-		border: 0px !important ;
+		font-size: 0.7em;
+		
 		}
 
 
 		}
+
 
 @media screen (min-width:481px) and (max-width: 768px){
-
+	
+	
 	.trophy {
-		font-size: 14px;
+		font-size: 18px;
 	}
 
-	.table td {
-		font-size: 10px;
-		font-weight: 300;
-	}
+	.colHidden{
+		display: none;
+		}
+
 	
 	.teamHeading{
 		font-size: 12px;
@@ -200,8 +240,15 @@ body{
 		font-size: 10px;
 	}
 
+	.stats-bg{
+					
+		font-weight:500;
+		
+		}
+
+
 	#stats-head th{
-	border: 0px !important ;
+
 	font-size: 12px;
 }
 }

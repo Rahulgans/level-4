@@ -4,54 +4,58 @@
 				
 					<div class="row">
 
-              			<h2 class="text-center intro-text"> We present to you the overall stats of England's top league</h2>
-
-
-							<div class="col-xs-12">
+						<!--	<div class="col-xs-12">
 							<img ng-src = "{{ mainCtrl.logo }}" class="img-responsive img-circle brand" >
-						</div>
+						</div>  -->
 
 							<div class="col-xs-12 actions">
 							 <form class="form-group">
 								 	
-								 	<div class="col-xs-6 col-sm-3 col-md-3">
-								 	<label for = "filter-season"> Select Season </label>
-									 <select  required class="form-control" id="filter-season" ng-model="check">
-									 	<option value="" class="text-muted">--Select Season--</option>
-									    <option value="1st">2015/16</option>
-									    <option value="2nd">2016/17</option>
-									   </select>
-									   <span class="help-block" style="color:red;">Required*</span>	
- 								</div>
- 							<div class="col-xs-6 col-sm-3 col-md-3">
- 									<label for="filter-team" > Enter Team1 </label>
- 									<input type="text" name="team" class="form-control" id="filter-team" placeholder="Enter team1 name" ng-model="getTeams.team1.key">
- 									<span class="help-block text-center">Eg: Enter as <em>Liverpool</em></span>
- 								</div>
-
- 							<div class="col-xs-6 col-sm-3 col-md-3">
- 									<label for="filter-team" > Enter Team2 </label>
- 									<input type="text" name="team" class="form-control" id="filter-team" placeholder="Enter team2 name" ng-model="getTeams.team2.key">
- 									<span class="help-block text-center">Eg: Enter as <em>Arsenal</em></span>
- 								</div>
-
- 							<div class="col-xs-6 col-sm-3 col-md-3">
- 									<label for="filter-date" > Enter Date </label>
- 									<input type="text" name="dat" class="form-control" id= "filter-date" placeholder="Enter match date" ng-model="getDate.date">
+								 	<div class="col-xs-6">
+								 	<label for="filter-date" > Enter Date </label>
+ 									<input type="text" name="date" class="form-control" id= "filter-date" placeholder="Enter match date" ng-model="getDate.date">
  									<span class="help-block text-center">Enter as<em>YYYY-mm-dd</em></span>
  								</div>
-
- 							<div class="col-xs-6 col-sm-3 col-md-3">
- 									<label for="filter-day" > Enter Matchday </label>
+ 									<div class="col-xs-6 colHidden">
+ 									<label for="filter-score2" > Enter Matchday </label>
  									<input type="text" name="day" class="form-control" id= "filter-day" placeholder="Enter match day" ng-model="getDay.name" data-toggle = "tooltip" data-placement="right" title="First letter starts with Caps">
  									<span class="help-block text-center">Eg: Enter as <em>Matchday 1</em></span>
+ 								</div>		
+ 								</form>
  								</div>
+
+ 									<div class="col-xs-12 actions">
+							 		<form class="form-group">
+							 		<div class="col-xs-6">
+ 									<label for="filter-team" > Enter Team1 </label>
+ 									<input type="text" name="team" class="form-control" id="filter-team" placeholder="Enter name" ng-model="getTeams.team1.key">
+ 									<span class="help-block text-center">Eg: Enter as <em>Liverpool</em></span>
+ 								</div>
+							 		
+ 									<div class="col-xs-6">
+ 									<label for="filter-team" > Enter Team2 </label>
+ 									<input type="text" name="team" class="form-control" id="filter-team" placeholder="Enter name" ng-model="getTeams.team2.key">
+ 									<span class="help-block text-center">Eg: Enter as <em>Arsenal</em></span>
+ 								</div>		
+ 								</form>
+ 								</div>
+ 								
+ 									<div class="col-xs-12 actions">
+							 		<form class="form-group">	
+ 									<div class="col-xs-6">
+ 									<label for="filter-date" > Enter Team1 score </label>
+ 									<input type="text" name="score" class="form-control" id= "filter-score1" placeholder="Enter score" ng-model="getDate.score1">
+ 								</div>
+ 								<div class="col-xs-6">
+ 									<label for="filter-score1" > Enter Team2 score </label>
+ 									<input type="text" name="score" class="form-control" id= "filter-score2" placeholder="Enter score" ng-model="getDate.score2">
+ 								</div>	
  							</form>	
 						</div>
 					</div> <!-- ROW ENDS -->
 
 							<div class="actions1"> 
-							<table ng-show="check =='1st'" class="table table-responsive table-condensed">
+							<table class="table table-responsive table-bordered table-condensed">
 							
 								<caption class="text-center">
 								<h3 class="trophy">
@@ -61,11 +65,12 @@
 
 								<thead id ="main-head">
 									<tr>
-							        <th>Day</th>
+							        <th class="colHidden">Day</th>
 							        <th>Date</th>
 							        <th>Team1</th>
 							        <th>Team2</th>
-							        <th>Results</th>
+							        <th>Score</th>
+							        <th>Details</th>
 							     </tr>
 						     </thead>
 
@@ -73,11 +78,12 @@
 
 						 <tr ng-repeat ="item in items.matches | filter : getDate | filter : getTeams" ng-init="matchId2=$index">
 						  	
-						  		<td>{{ items.name }}</td>
+						  		<td class="colHidden">{{ items.name }}</td>
 						  		<td>{{ item.date  }}</td>
 						  		<td>{{ item.team1.key | uppercase  }}</td>
 						  		<td>{{ item.team2.key | uppercase }}</td>
-						  		<td><span><i class="fa fa-futbol-o fa-2x text-info"></i></span>
+						  		<td>{{ item.score1 }} - {{ item.score2 }}</td>
+						  		<td><span style = "display:inline-block;" class="text-center"><i class="fa fa-futbol-o fa-2x"></i></span>
 						  		<p style = "margin: 5px 0px;">
 						  		<a ng-href="#/match/{{ matchId1 }}/{{ matchId2 }}/{{ item.date }}" class="btn btn-default btn-xs round">Dive in &raquo;</a>
 						  		</p>
@@ -91,7 +97,7 @@
 				</div>
 
 							<div class="actions1"> 
-							<table ng-show="check =='2nd'" class="table table-responsive table-condensed">
+							<table class="table table-responsive table-bordered table-condensed">
 							<caption class="text-center">
 								<h3 class="trophy">
 								<span><i class=" fa fa-trophy fa-3x text-danger"></i>{{ mainCtrl.nameSecond }}<i class=" fa fa-trophy fa-3x text-danger"></i>
@@ -101,11 +107,12 @@
 
 								<thead>
 								<tr>
-						        <th>Day</th>
+						        <th class="colHidden">Day</th>
 						        <th>Date</th>
 						       <th>Team1</th>
 							   <th>Team2</th>
-						        <th>Results</th>
+							   <th>Score</th>
+						        <th>Details</th>
 						     </tr>
 						  </thead>
 
@@ -113,11 +120,12 @@
 
 						 <tr ng-repeat ="item in items.matches | filter : getDate | filter : getTeams" ng-init="matchId2=$index">
 						  	
-						  		<td>{{ items.name }}</td>
+						  		<td class="colHidden">{{ items.name }}</td>
 						  		<td>{{ item.date }}</td>
 						  		<td>{{ item.team1.key | uppercase  }}</td>
 						  		<td>{{ item.team2.key | uppercase }}</td>
-						  		<td><span><i class="fa fa-futbol-o fa-2x text-info"></i></span>
+						  		<td>{{ item.score1 }} - {{ item.score2 }}</td> 
+						  		<td><span style = "display:inline-block;" class="text-center"><i class="fa fa-futbol-o fa-2x"></i></span>
 						  		<p style = "margin: 5px 0px;">
 						  		<a ng-href="#/match/{{ matchId1 }}/{{ matchId2 }}/{{ item.date }}" class="btn btn-default btn-xs round">Dive in &raquo;</a>
 						  		</p>
@@ -125,6 +133,7 @@
 						  	</tr>
 					  	</tbody>
 					</table>
+					
 					</div>
 				
 				

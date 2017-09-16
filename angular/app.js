@@ -1,9 +1,9 @@
 // module declaration
-var myApp = angular.module('matchesApp',['ngRoute']);
+var myApp = angular.module('matchesApp',['ngRoute','ngAnimate']);
 
 // ******** ROUTE Configuration ********
 
-          myApp.config(["$routeProvider",function($routeProvider){
+          /*myApp.config(["$routeProvider",function($routeProvider){
             $routeProvider
             .when("/main",{
               templateUrl : "views/main-view.html",
@@ -27,4 +27,4 @@ var myApp = angular.module('matchesApp',['ngRoute']);
                           
                       }
                   );
-          }]);
+          }]);*/

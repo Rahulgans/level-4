@@ -1,6 +1,6 @@
 
 
- var myApp = angular.module("matchesApp",["ngRoute"]);
+ //var myApp = angular.module("matchesApp",["ngRoute"]);
 
   // ******** ROUTE Configuration ********
 

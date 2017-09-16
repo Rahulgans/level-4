@@ -1,7 +1,7 @@
-var myApp = angular.module('matchesApp',['ngRoute']);
+//var myApp = angular.module('matchesApp',['ngRoute']);
 
 myApp.controller("MainController",['$http',function($http){
- 
+
   var main = this;
 
     	this.title = "Stats for EPL";
