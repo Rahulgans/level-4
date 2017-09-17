@@ -29,7 +29,10 @@
 		                   <th>Loss</th>
 		                   <th>Drawn</th>
 		                   <th>Goals Scored</th>
-		                   <th class="colHidden">Goals Against</th>    <!-- To hide on lower screen size -->
+		                   <th class="colHidden">Goals Against</th>				<!-- To hide on lower screen size -->
+		                   <th class="colHidden">Home stats</th>
+		                   <th class="colHidden">Away stats</th>		
+		                       
 		                   <th>Win %</th>
 		                   <th class="colHidden">Loss %</th>
 		                 </tr>
@@ -44,6 +47,8 @@
 		                  <td>{{ statsCtrl.totalMatches1.drawn }}</td>
 		                  <td>{{ statsCtrl.totalMatches1.goalsFor }}</td>
 		                  <td class="colHidden">{{ statsCtrl.totalMatches1.goalsAgainst }}</td>
+		                  <td class="colHidden">{{ statsCtrl.totalMatches1.homeWins }}-{{ statsCtrl.totalMatches1.homeLoss }}-{{ statsCtrl.totalMatches1.homeTies }}</td>
+		                  <td class="colHidden">{{ statsCtrl.totalMatches1.awayWins }}-{{ statsCtrl.totalMatches1.awayLoss }}-{{ statsCtrl.totalMatches1.awayTies }}</td>
 		                  <td>{{ statsCtrl.totalMatches1.winPercent }}</td>
 		                  <td class="colHidden">{{ statsCtrl.totalMatches1.lossPercent }}</td>
 		                </tr>
@@ -56,7 +61,9 @@
 		                  <td>{{ statsCtrl.totalMatches2.loss }}</td>
 		                  <td>{{ statsCtrl.totalMatches2.drawn }}</td>
 		                  <td>{{ statsCtrl.totalMatches2.goalsFor }}</td>
-		                  <td class="colHidden">{{ statsCtrl.totalMatches2.goalsAgainst }}</td>     
+		                  <td class="colHidden">{{ statsCtrl.totalMatches2.goalsAgainst }}</td> 
+		                  <td class="colHidden">{{ statsCtrl.totalMatches2.homeWins }}-{{ statsCtrl.totalMatches2.homeLoss }}-{{ statsCtrl.totalMatches2.homeTies }}</td>
+		                  <td class="colHidden">{{ statsCtrl.totalMatches2.awayWins }}-{{ statsCtrl.totalMatches2.awayLoss }}-{{ statsCtrl.totalMatches2.awayTies }}</td>    
 		                  <td>{{ statsCtrl.totalMatches2.winPercent }}</td>
 		                  <td class="colHidden">{{ statsCtrl.totalMatches2.lossPercent }}</td>
 		                </tr>      
