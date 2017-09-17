@@ -198,13 +198,6 @@ myApp.controller("StatsController",["$http",function($http){
                 }
                 else {
 
-                   if(main.value1 == true){
-                          main.value1 = false ;
-                           main.value2 = true;
-                       }
-                      else {
-                main.value2 = true;
-              }
 
               $http({
                     method:"GET",
@@ -226,11 +219,18 @@ myApp.controller("StatsController",["$http",function($http){
 
                 if(this.names2.includes(data1)){
 
+                  if(main.value1 == true){
+                          main.value1 = false ;
+                           main.value2 = true;
+                       }
+                      else {
+                    main.value2 = true;
+                  }
+
                    main.teamStats(response,data1);
                    }
 
                    else{
-                    main.value2 = false;
                     alert("Team didn't play in 2016 !");
                    }
 
@@ -238,6 +238,6 @@ myApp.controller("StatsController",["$http",function($http){
                 alert("Error in GET");
                   })         
                 }   
-                 } ;                          
+             } ;                          
 
         }]) // controller ends
