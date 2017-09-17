@@ -51,7 +51,7 @@ body{
     vertical-align: middle;
     height: 50px;
 	text-align: center;
-	font-size: 1.5em;
+	font-size: 1.3em;
 }
 
 .trophy {
@@ -63,7 +63,7 @@ body{
 	color: ghostwhite;
 	 vertical-align: middle !important;
 	font-weight: 300;
-	font-size: 1.4em;
+	font-size: 1.2em;
 }
 
 	.main-head{
@@ -86,6 +86,7 @@ body{
 
 .round{
 
+	display: block;
 	background-color: #7bed5f;
 	
 }
