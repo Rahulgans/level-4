@@ -183,11 +183,12 @@ myApp.controller("StatsController",["$http",function($http){
                     alert("Team didn't play in 2015 !");
                    // main.value1 = false;
                    }
+                 }
  
 
              , function errorCallback(reason){   
                 alert("Error in GET");
-                  }})           
+                  })           
 
               }
                }; 
