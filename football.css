@@ -30,12 +30,12 @@ body{
 	background-image: linear-gradient(rgba(255,255,255,0.3),rgba(11, 11, 11, 0.6)),url("images/trophy.jpg");
 	background-repeat: no-repeat;
 	background-size: cover;
-	min-height: 250px;
+	height: 200px;
 	}
 
 	#intro-text{
 
-		margin: 20% 0%;
+		margin: 10% 0%;
 		color: floralwhite;
 	}
 
@@ -55,7 +55,7 @@ body{
 }
 
 .trophy {
-			font-size: 1em;
+			font-size: 1.5em;
 		}	
 
 .table td {
@@ -100,7 +100,7 @@ body{
 
 	display: flex;
 	align-items: center;
-	margin-top: 20px;
+	margin-top: 40px;
 	margin-bottom: 10px;
 }
 
@@ -144,7 +144,7 @@ body{
 
 
 		.intro-image{
-		min-height: 250px;
+		min-height: 150px;
 		}
 
 		.trophy {
@@ -218,7 +218,7 @@ body{
 	
 
 	.trophy {
-		font-size: 18px;
+		font-size: 1.5em;
 	}
 
 	.colHidden{
@@ -227,7 +227,7 @@ body{
 
 		.table td {
 
-		font-size: 0.9em;
+		font-size: 0.9dwem;
 
 	}
 

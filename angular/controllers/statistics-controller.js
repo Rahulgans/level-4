@@ -22,7 +22,8 @@ myApp.controller("StatsController",["$http",function($http){
                //    console.log(data1)
 
                 var matches = 0 ;  var wins= 0; var loss = 0; var drawn = 0;
-                 var goalsFor = 0; var goalsAgainst= 0;
+                 var goalsFor = 0; var goalsAgainst= 0;  var homeWins =0; var homeLoss =0;
+                 var homeTies =0; var awayWins =0; var awayLoss =0; var awayTies =0;
 
               for(var i in main.rounds1){
 
@@ -41,14 +42,17 @@ myApp.controller("StatsController",["$http",function($http){
 
                       if(main.rounds1[i].matches[j].score1 > main.rounds1[i].matches[j].score2){
                         wins ++ ; 
+                        homeWins ++
                       }
 
                       else if(main.rounds1[i].matches[j].score1 < main.rounds1[i].matches[j].score2){
                         loss ++;
+                        homeLoss++;
                       }
 
                       else if(main.rounds1[i].matches[j].score1 == main.rounds1[i].matches[j].score2){
                         drawn ++;
+                        homeTies++;
                       }
                       
                     } // If !
@@ -66,14 +70,17 @@ myApp.controller("StatsController",["$http",function($http){
                       
                        if(main.rounds1[i].matches[j].score1 > main.rounds1[i].matches[j].score2){
                         loss++ ; 
+                        awayLoss++;
                       }
 
                       else if(main.rounds1[i].matches[j].score1 < main.rounds1[i].matches[j].score2){
                         wins++;
+                        awayWins++;
                       }
 
                       else if(main.rounds1[i].matches[j].score1 == main.rounds1[i].matches[j].score2){
                         drawn++;
+                        awayTies++;
                       }
 
                     }      //else if ends
@@ -98,6 +105,13 @@ myApp.controller("StatsController",["$http",function($http){
                   main.totalMatches1.drawn = drawn;
                   main.totalMatches1.winPercent = ((wins/matches)*100).toFixed(2);
                   main.totalMatches1.lossPercent = ((loss/matches)*100).toFixed(2);
+                  main.totalMatches1.homeWins = homeWins;
+                  main.totalMatches1.homeLoss = homeLoss;
+                  main.totalMatches1.homeTies = homeTies;
+                  main.totalMatches1.awayWins = awayWins;
+                  main.totalMatches1.awayLoss = awayLoss;
+                  main.totalMatches1.awayTies = awayTies;
+
 
                       }
 
@@ -112,6 +126,12 @@ myApp.controller("StatsController",["$http",function($http){
                   main.totalMatches2.drawn = drawn;
                   main.totalMatches2.winPercent = ((wins/matches)*100).toFixed(2);
                   main.totalMatches2.lossPercent = ((loss/matches)*100).toFixed(2);
+                  main.totalMatches2.homeWins = homeWins;
+                  main.totalMatches2.homeLoss = homeLoss;
+                  main.totalMatches2.homeTies = homeTies;
+                  main.totalMatches2.awayWins = awayWins;
+                  main.totalMatches2.awayLoss = awayLoss;
+                  main.totalMatches2.awayTies = awayTies;
 
                 }
 
