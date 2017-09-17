@@ -186,11 +186,14 @@ body{
 		}
 
 		.teamHeading{
-			font-size: 10px;
+			font-size: 0.9em;
+		}
+		.teamGoals{
+			font-size: 0.8em;
 		}
 
 		.match-center h3{
-			font-size: 10px;
+			font-size: 0.9em;
 		}
 
 		.matchRight{
@@ -237,11 +240,16 @@ body{
 
 	
 	.teamHeading{
-		font-size: 12px;
+		font-size: 1em;
+		}
+
+		.teamGoals{
+			font-size: 0.9em;
 		}
 
 	.match-center h3{
-		font-size: 10px;
+
+		font-size: 1.1em;
 	}
 
 	.stats-bg{
