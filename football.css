@@ -51,7 +51,7 @@ body{
     vertical-align: middle;
     height: 50px;
 	text-align: center;
-	font-size: 1.3em;
+	font-size: 1.2em;
 }
 
 .trophy {
@@ -63,7 +63,7 @@ body{
 	color: ghostwhite;
 	 vertical-align: middle !important;
 	font-weight: 300;
-	font-size: 1.2em;
+	font-size: 1.1em;
 }
 
 	.main-head{
@@ -86,7 +86,6 @@ body{
 
 .round{
 
-	display: block;
 	background-color: #7bed5f;
 	
 }
@@ -260,8 +259,9 @@ body{
 
 @media screen and (min-width: 993px){
 
-	body{
-	font-size: 2em;
+.round{
+	display: block;
 }
+
 }
 
