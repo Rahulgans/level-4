@@ -62,7 +62,7 @@ body{
 	text-align: center;
 	color: ghostwhite;
 	 vertical-align: middle !important;
-	font-weight: 00;
+	font-weight: 300;
 	font-size: 1.5em;
 }
 
@@ -157,7 +157,6 @@ body{
 
 		.table td {
 
-		font-weight: 300;
 		font-size: 0.8em;
 
 	}
@@ -227,7 +226,7 @@ body{
 
 		.table td {
 
-		font-size: 0.9dwem;
+		font-size: 0.9em;
 
 	}
 
