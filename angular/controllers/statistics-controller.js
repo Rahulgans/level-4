@@ -16,14 +16,6 @@ myApp.controller("StatsController",["$http",function($http){
       this.value2 = false ;
 
           this.teamStats = function(response,data1){ 
-             if(main.value2){               // toggling 2015/16 stats button
-                    main.value2 = false;   
-                     main.value1 = true;
-                    }
-
-                  else{
-                    main.value1 = true;
-                  } 
            
            main.rounds1 = response.data.rounds; 
 
@@ -174,19 +166,29 @@ myApp.controller("StatsController",["$http",function($http){
 
                     }
 
-                 if(this.names1.includes(data1)){
-                  
+               if(this.names1.includes(data1)){
+                  if(main.value2){               // toggling 2015/16 stats button
+                    main.value2 = false;   
+                     main.value1 = true;
+                    }
+
+                else{
+                    main.value1 = true;
+                  } 
+
                    main.teamStats(response,data1);
                    }
 
                    else{
                     alert("Team didn't play in 2015 !");
                    // main.value1 = false;
-                   }
-                   }
-                 }, function errorCallback(reason){   
-                     alert("Error in GET");
-                  })          
+                   }      
+
+             }, function errorCallback(reason){   
+                alert("Error in GET");
+                  })           
+
+              }
                }; 
 
             this.statsCheck2 = function(data1){ 
