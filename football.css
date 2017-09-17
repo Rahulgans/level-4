@@ -3,6 +3,11 @@ body{
 	font-family: 'Titillium Web', sans-serif;
 }
 
+.navbar-right{
+
+	font-size: 1em;
+}
+
 
 		/***  FADE IN & FADE OUT ANIMATIONS ***/ 
 .page {
@@ -63,7 +68,7 @@ body{
 	color: ghostwhite;
 	 vertical-align: middle !important;
 	font-weight: 300;
-	font-size: 1.1em;
+	font-size: 1.2em;
 }
 
 	.main-head{
@@ -269,6 +274,11 @@ body{
 
 .round{
 	display: block;
+}
+
+.navbar-right{
+
+	font-size: 1.6em;
 }
 
 }
