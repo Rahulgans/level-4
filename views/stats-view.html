@@ -29,8 +29,9 @@
 		                   <th>Loss</th>
 		                   <th>Drawn</th>
 		                   <th>Goals Scored</th>
-		                   <th class="colHidden">Goals Against</th>
+		                   <th class="colHidden">Goals Against</th>    <!-- To hide on lower screen size -->
 		                   <th>Win %</th>
+		                   <th class="colHidden">Loss %</th>
 		                 </tr>
 		                 </thead>
 		                 
@@ -44,6 +45,7 @@
 		                  <td>{{ statsCtrl.totalMatches1.goalsFor }}</td>
 		                  <td class="colHidden">{{ statsCtrl.totalMatches1.goalsAgainst }}</td>
 		                  <td>{{ statsCtrl.totalMatches1.winPercent }}</td>
+		                  <td class="colHidden">{{ statsCtrl.totalMatches1.lossPercent }}</td>
 		                </tr>
 		                </tbody>
 		                <tbody ng-if="statsCtrl.value2">
@@ -54,8 +56,9 @@
 		                  <td>{{ statsCtrl.totalMatches2.loss }}</td>
 		                  <td>{{ statsCtrl.totalMatches2.drawn }}</td>
 		                  <td>{{ statsCtrl.totalMatches2.goalsFor }}</td>
-		                  <td class="colHidden">{{ statsCtrl.totalMatches2.goalsAgainst }}</td>
+		                  <td class="colHidden">{{ statsCtrl.totalMatches2.goalsAgainst }}</td>     
 		                  <td>{{ statsCtrl.totalMatches2.winPercent }}</td>
+		                  <td class="colHidden">{{ statsCtrl.totalMatches2.lossPercent }}</td>
 		                </tr>      
 		              </tbody>
 		            </table>

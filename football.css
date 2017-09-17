@@ -35,7 +35,7 @@ body{
 
 	#intro-text{
 
-		margin: 10%;
+		margin: 20% 0%;
 		color: floralwhite;
 	}
 
@@ -51,7 +51,7 @@ body{
     vertical-align: middle;
     height: 50px;
 	text-align: center;
-	font-size: 12px;
+	font-size: 1.5em;
 }
 
 .trophy {
@@ -63,10 +63,10 @@ body{
 	color: ghostwhite;
 	 vertical-align: middle !important;
 	font-weight: 00;
-	font-size: 2em;
+	font-size: 1.5em;
 }
 
-	#main-head{
+	.main-head{
 	background-color: #090909;
 		opacity: 0.9;
 		color: bisque;
@@ -133,10 +133,12 @@ body{
 }
 
 #stats-head th{
-	border: 0px !important ;
-	font-size: 2em;
-
+	vertical-align: middle;
+	text-align: center;
+	font-size: 1.5em;
+	border: 0px;
 }
+
 
 	@media screen and (max-width: 480px){
 
@@ -149,10 +151,14 @@ body{
 			font-size: 14px;
 		}
 
+		.table > thead > tr > th {
+			font-size: 0.8em;
+		}
+
 		.table td {
 
 		font-weight: 300;
-		font-size: 0.7em;
+		font-size: 0.8em;
 
 	}
 
@@ -200,7 +206,7 @@ body{
 
 		#stats-head th{
 		
-		font-size: 0.7em;
+		font-size: 0.8em;
 		
 		}
 
@@ -221,7 +227,7 @@ body{
 
 		.table td {
 
-		font-size: 0.8em;
+		font-size: 0.9em;
 
 	}
 

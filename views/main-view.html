@@ -16,7 +16,8 @@
  									<input type="text" name="date" class="form-control" id= "filter-date" placeholder="Enter match date" ng-model="getDate.date">
  									<span class="help-block text-center">Enter as<em>YYYY-mm-dd</em></span>
  								</div>
- 									<div class="col-xs-6 colHidden">
+ 									<div class="col-xs-6 colHidden">    <!-- to hide on lower screen size -->
+ 									
  									<label for="filter-score2" > Enter Matchday </label>
  									<input type="text" name="day" class="form-control" id= "filter-day" placeholder="Enter match day" ng-model="getDay.name" data-toggle = "tooltip" data-placement="right" title="First letter starts with Caps">
  									<span class="help-block text-center">Eg: Enter as <em>Matchday 1</em></span>
@@ -63,7 +64,7 @@
 								</h3>
 							</caption>
 
-								<thead id ="main-head">
+								<thead class ="main-head">
 									<tr>
 							        <th class="colHidden">Day</th>
 							        <th>Date</th>
@@ -105,9 +106,9 @@
 							</h3>
 						</caption>
 
-								<thead>
+								<thead class="main-head">
 								<tr>
-						        <th class="colHidden">Day</th>
+						        <th class="colHidden">Day</th>    
 						        <th>Date</th>
 						       <th>Team1</th>
 							   <th>Team2</th>
