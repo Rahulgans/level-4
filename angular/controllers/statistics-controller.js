@@ -182,7 +182,7 @@ myApp.controller("StatsController",["$http",function($http){
 
                    else{
                     alert("Team didn't play in 2015 !");
-                    console.log(main.value1);
+                    main.value1 = false;
                    }
                 
               }, function errorCallback(reason){   
@@ -231,6 +231,7 @@ myApp.controller("StatsController",["$http",function($http){
                    }
 
                    else{
+                    main.value2 = false;
                     alert("Team didn't play in 2016 !");
                    }
 
