@@ -4,7 +4,7 @@
 
 // Match Controller starts
   
-    myApp.controller("MatchController", ['$http','$routeParams',function($http,$routeParams){
+    myApp.controller("MatchController", ['$http','$location','$routeParams',function($http,$location,$routeParams){
 
 
 
@@ -30,7 +30,9 @@
       this.baseUrl2 = "https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json";
 
       this.navigateBack = function (){
-        window.history.back();
+      //  window.history.back();
+
+      $location.path("/main");
       }
 
       this.matchStats = function(data){
