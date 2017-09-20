@@ -36,7 +36,7 @@
       }
 
       this.matchStats = function(data){
-        console.log(data);
+       // console.log(data);
         main.rounds1 = data.rounds;
 
     //  console.log(main.matchId1);

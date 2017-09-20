@@ -5,6 +5,7 @@
 				
 						<img ng-src = "images/{{ matchCtrl.code1 | lowercase }}.png" class="img-responsive logo-team">
 						<h4 class="text-center teamHeading">{{ matchCtrl.team1 }}</h4>
+						<h5 class="text-center teamGoals">( {{ matchCtrl.team1.code }} )</h5>
 						<h5 class="text-center teamGoals"> Goals : {{ matchCtrl.score1 }}</h5>
 					</div>
 						
@@ -19,7 +20,7 @@
 					
 						<img ng-src = "images/{{ matchCtrl.code2 | lowercase }}.png" class="img-responsive logo-team">
 						<h4 class="text-center teamHeading">{{ matchCtrl.team2 }}</h4>
-
+						<h5 class="text-center teamGoals">( {{ matchCtrl.team2.code }} )</h5>
 						<h5 class="text-center teamGoals">Goals : {{ matchCtrl.score2 }}</h5>
 						
 					</div>
