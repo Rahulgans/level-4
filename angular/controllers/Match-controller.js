@@ -13,6 +13,7 @@
 
         this.matchId1 = $routeParams.matchid1 ;
         this.matchId2 = $routeParams.matchid2 ;
+        console.log(this.matchId1);
         this.matchDate = $routeParams.matchdate ;
         
         this.team1;
@@ -49,23 +50,23 @@
 
           // looping based on routeParams ID 
 
-            if (i== main.matchId1 && j == main.matchId2 && main.rounds1[i].matches[j].date == main.matchDate){
+            if (main.rounds1[i].matches[j].team1.code == main.matchId1 && main.rounds1[i].matches[j].team2.code == main.matchId2 && main.rounds1[i].matches[j].date == main.matchDate){
 
           //    console.log("working");
 
-             main.day = main.rounds1[main.matchId1].name;
+             main.day = main.rounds1[i].name;
                       
-                   main.date = main.rounds1[main.matchId1].matches[main.matchId2].date;
-                   main.team1 = main.rounds1[main.matchId1].matches[main.matchId2].team1.name;
+                   main.date = main.rounds1[i].matches[j].date;
+                   main.team1 = main.rounds1[i].matches[j].team1.name;
                      
-                   main.team2 = main.rounds1[main.matchId1].matches[main.matchId2].team2.name;
+                   main.team2 = main.rounds1[i].matches[j].team2.name;
                      
 
-                  main.score1 =main.rounds1[main.matchId1].matches[main.matchId2].score1;
-                  main.score2 = main.rounds1[main.matchId1].matches[main.matchId2].score2;
-                 main.code1 = main.rounds1[main.matchId1].matches[main.matchId2].team1.code;
+                  main.score1 =main.rounds1[i].matches[j].score1;
+                  main.score2 = main.rounds1[i].matches[j].score2;
+                 main.code1 = main.rounds1[i].matches[j].team1.code;
                     //    console.log(main.code1);
-                main.code2 = main.rounds1[main.matchId1].matches[main.matchId2].team2.code;
+                main.code2 = main.rounds1[i].matches[j].team2.code;
                    
 
                  if (main.score1 > main.score2){
