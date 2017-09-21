@@ -71,9 +71,9 @@
 							     </tr>
 						     </thead>
 
-						 <tbody ng-repeat ="items in mainCtrl.rounds1 | filter : getDay" class="for-bgimage">
+						 <tbody ng-repeat ="items in mainCtrl.rounds1 | filter : getDay" class="for-bgimage" ng-init="matchId1=$index">
 
-						 <tr ng-repeat ="item in items.matches | filter : getDate | filter : getTeams">
+						 <tr ng-repeat ="item in items.matches | filter : getDate | filter : getTeams" ng-init="matchId2=$index">
 						  	
 						  		<td class="colHidden">{{ items.name }}</td>
 						  		<td>{{ item.date  }}</td>
@@ -82,7 +82,7 @@
 						  		<td>{{ item.score1 }} - {{ item.score2 }}</td>
 						  		<td><span style = "display:inline-block;" class="text-center"><i class="fa fa-futbol-o fa-2x"></i></span>
 						  		<p style = "margin: 5px 0px;">
-						  		<a ng-href="#/match/{{ item.team1.code }}/{{ item.team2.code }}/{{ item.date }}" class="btn btn-default btn-xs round">Dive in &raquo;</a>
+						  		<a ng-href="#/match/{{ matchId1 }}/{{ matchId2 }}/{{ item.date }}" class="btn btn-default btn-xs round">Dive in &raquo;</a>
 						  		</p>
 						  		</td>
 			
@@ -113,9 +113,9 @@
 						     </tr>
 						  </thead>
 
-						<tbody ng-repeat ="items in mainCtrl.rounds2 | filter : getDay" class="for-bgimage">
+						<tbody ng-repeat ="items in mainCtrl.rounds2 | filter : getDay" class="for-bgimage" ng-init="matchId1=$index">
 
-						 <tr ng-repeat ="item in items.matches | filter : getDate | filter : getTeams">
+						 <tr ng-repeat ="item in items.matches | filter : getDate | filter : getTeams" ng-init="matchId2=$index">
 						  	
 						  		<td class="colHidden">{{ items.name }}</td>
 						  		<td>{{ item.date }}</td>
@@ -124,7 +124,7 @@
 						  		<td>{{ item.score1 }} - {{ item.score2 }}</td> 
 						  		<td><span style = "display:inline-block;" class="text-center"><i class="fa fa-futbol-o fa-2x"></i></span>
 						  		<p style = "margin: 5px 0px;">
-						  		<a ng-href="#/match/{{ item.team1.code }}/{{ item.team2.code }}/{{ item.date }}" class="btn btn-default btn-xs round">Dive in &raquo;</a>
+						  		<a ng-href="#/match/{{ matchId1 }}/{{ matchId2 }}/{{ item.date }}" class="btn btn-default btn-xs round">Dive in &raquo;</a>
 						  		</p>
 						 		 </td>
 						  	</tr>

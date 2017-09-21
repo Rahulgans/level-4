@@ -61,12 +61,12 @@
                    main.team2 = main.rounds1[main.matchId1].matches[main.matchId2].team2.name;
                      
 
-                  main.score1 =main.rounds1[main.matchId1].matches[main.matchId2].score1;
-                  main.score2 = main.rounds1[main.matchId1].matches[main.matchId2].score2;
-                 main.code1 = main.rounds1[main.matchId1].matches[main.matchId2].team1.code;
-                    //    console.log(main.code1);
-                main.code2 = main.rounds1[main.matchId1].matches[main.matchId2].team2.code;
-                   
+                    main.score1 =main.rounds1[main.matchId1].matches[main.matchId2].score1;
+                    main.score2 = main.rounds1[main.matchId1].matches[main.matchId2].score2;
+                    main.code1 = main.rounds1[main.matchId1].matches[main.matchId2].team1.code;
+                      //    console.log(main.code1);
+                    main.code2 = main.rounds1[main.matchId1].matches[main.matchId2].team2.code;
+                     
 
                  if (main.score1 > main.score2){
                     main.winner = ""+main.team1+" won" ; 
