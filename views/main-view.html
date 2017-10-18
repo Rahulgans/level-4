@@ -41,11 +41,11 @@
 							 		<form class="form-group">	
  									<div class="col-xs-6">
  									<label for="filter-date" > Enter Team1 score </label>
- 									<input type="text" name="score" class="form-control" id= "filter-score1" placeholder="Enter score" ng-model="getDate.score1">
+ 									<input type="number" name="score" class="form-control" id= "filter-score1" placeholder="Enter score" ng-model="getDate.score1">
  								</div>
  								<div class="col-xs-6">
  									<label for="filter-score1" > Enter Team2 score </label>
- 									<input type="text" name="score" class="form-control" id= "filter-score2" placeholder="Enter score" ng-model="getDate.score2">
+ 									<input type="number" name="score" class="form-control" id= "filter-score2" placeholder="Enter score" ng-model="getDate.score2">
  								</div>	
  							</form>	
 						</div>
@@ -73,7 +73,7 @@
 
 						 <tbody ng-repeat ="items in mainCtrl.rounds1 | filter : getDay" class="for-bgimage">
 
-						 <tr ng-repeat ="item in items.matches | filter : getDate | filter : getTeams">
+						 <tr ng-repeat ="item in items.matches | filter : getDate :true | filter : getTeams">
 						  	
 							<td class="colHidden">{{ items.name }}</td>
 						  	<td>{{ item.date  }}</td>

@@ -1,5 +1,5 @@
 body{
-	padding-top: 70px;
+	padding-top: 50px;
 	font-family: 'Titillium Web', sans-serif;
 }
 
@@ -11,23 +11,23 @@ body{
 
 		/***  FADE IN & FADE OUT ANIMATIONS ***/ 
 .page {
-  transition: 0.3s ease-out all;
+ 	transition: 0.3s ease-out all;
 }
 
 .page.ng-enter {
-  opacity: 0;
+  	opacity: 0;
 }
 
 .page.ng-enter.ng-enter-active {
-  opacity: 1;
+  	opacity: 1;
 }
 
 .page.ng-leave {
-  opacity: 1;
+  	opacity: 1;
 }
 
 .page.ng-leave.ng-leave-active {
-  opacity: 0;
+  	opacity: 0;
 }						/** animations end **/
 			
 
@@ -282,7 +282,7 @@ body{
 
 .navbar-right{
 
-	font-size: 1.6em;
+	font-size: 1.2em;
 }
 
 }

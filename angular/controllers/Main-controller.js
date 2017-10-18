@@ -4,6 +4,7 @@ myApp.controller("MainController",['$http',function($http){
 
   var main = this;
 
+ 
     	this.baseUrl1 = "https://raw.githubusercontent.com/openfootball/football.json/master/2015-16/en.1.json";
     	this.baseUrl2 = "https://raw.githubusercontent.com/openfootball/football.json/master/2016-17/en.1.json"  
         
@@ -24,7 +25,8 @@ myApp.controller("MainController",['$http',function($http){
                   // this callback will be called asynchronously
                   // when the response is available
                        main.rounds1 = response.data.rounds;
-                      main.nameFirst = response.data.name;       
+                      main.nameFirst = response.data.name;    
+                      console.log(response.data.rounds[0].matches);   
                   //        console.log(main.rounds1);
 
                   }, function errorCallback(response) {
@@ -34,6 +36,8 @@ myApp.controller("MainController",['$http',function($http){
 
                    })
                  };
+
+                   console.log(main.rounds1);
 
                       this.loadFirst() // calling loadFirst method
                  
