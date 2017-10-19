@@ -8,7 +8,7 @@
 							 <form class="form-group">
 								 	
 								 	<div class="col-xs-6">
-								 	<label for="filter-date" > Enter Date </label>
+ 									<label for="filter-date" > Enter Date </label>
  									<input type="text" name="date" class="form-control" id= "filter-date" placeholder="Enter match date" ng-model="getDate.date">
  									<span class="help-block text-center">Enter as<em>YYYY-mm-dd</em></span>
  								</div>
@@ -41,11 +41,11 @@
 							 		<form class="form-group">	
  									<div class="col-xs-6">
  									<label for="filter-date" > Enter Team1 score </label>
- 									<input type="number" name="score" class="form-control" id= "filter-score1" placeholder="Enter score" ng-model="getDate.score1">
+ 									<input type="text" name="score" class="form-control" id= "filter-score1" placeholder="Enter score" ng-model="getDate.score1">
  								</div>
  								<div class="col-xs-6">
  									<label for="filter-score1" > Enter Team2 score </label>
- 									<input type="number" name="score" class="form-control" id= "filter-score2" placeholder="Enter score" ng-model="getDate.score2">
+ 									<input type="text" name="score" class="form-control" id= "filter-score2" placeholder="Enter score" ng-model="getDate.score2">
  								</div>	
  							</form>	
 						</div>
@@ -67,19 +67,21 @@
 							        <th>Team1</th>
 							        <th>Team2</th>
 							        <th>Score</th>
+							        
 							        <th>Details</th>
 							     </tr>
 						     </thead>
 
 						 <tbody ng-repeat ="items in mainCtrl.rounds1 | filter : getDay" class="for-bgimage">
 
-						 <tr ng-repeat ="item in items.matches | filter : getDate :true | filter : getTeams">
+						 <tr ng-repeat ="item in items.matches | filter : getDate | filter : getTeams">
 						  	
 							<td class="colHidden">{{ items.name }}</td>
 						  	<td>{{ item.date  }}</td>
 						  	<td>{{ item.team1.key | uppercase  }}</td>
 					  		<td>{{ item.team2.key | uppercase }}</td>
 					  		<td>{{ item.score1 }} - {{ item.score2 }}</td>
+					  		
 					  		<td><span style = "display:inline-block;" class="text-center"><i class="fa fa-futbol-o fa-2x"></i></span>
 						  	<p style = "margin: 5px 0px;">
 						  	<a ng-href="#/match/{{ item.team1.code }}/{{ item.team2.code }}/{{ item.date }}" class="btn btn-default btn-xs round">Dive in &raquo;</a>
